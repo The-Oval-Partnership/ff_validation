@@ -76,7 +76,7 @@ if os.path.exists(path) and demand_to_view == "Bus demand":
 elif os.path.exists(path) and demand_to_view == "Residential demand":
     quantiles = [0.0, 0.01, 0.03131349379808141, 0.05138331924456558]
     boundary = gpd.read_file(os.path.join(BASE_DIR, la_to_view, "boundary.gpkg"))
-    gdf = gpd.read_file(path)
+    gdf = gpd.read_file(path, engine='pyogrio')
     m = leafmap.Map(center=(51.5074, 0.1278), zoom=10)
     m.add_basemap("OpenStreetMap")
     m.add_gdf(boundary, layer_name="boundary", fill="red", info_mode="on_click")
