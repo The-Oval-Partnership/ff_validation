@@ -55,7 +55,6 @@ if os.path.exists(path) and demand_to_view == "Bus demand":
     boundary = gpd.read_file(os.path.join(BASE_DIR, la_to_view, "boundary.gpkg"))
     gdf = gpd.read_file(path)
     m = leafmap.Map(center=(51.5074, 0.1278), zoom=10)
-    m.add_basemap(basemap="CartoDB.Positron")
     m.add_basemap("OpenStreetMap")
     m.add_gdf(boundary, layer_name="boundary", color="Red", info_mode="on_click")
     for _, row in gdf.iterrows():
@@ -79,7 +78,6 @@ elif os.path.exists(path) and demand_to_view == "Residential demand":
     boundary = gpd.read_file(os.path.join(BASE_DIR, la_to_view, "boundary.gpkg"))
     gdf = gpd.read_file(path)
     m = leafmap.Map(center=(51.5074, 0.1278), zoom=10)
-    m.add_basemap(basemap="CartoDB.Positron")
     m.add_basemap("OpenStreetMap")
     m.add_gdf(boundary, layer_name="boundary", fill="red", info_mode="on_click")
     m.add_data(gdf, column="residents per m2 ",
@@ -95,7 +93,6 @@ elif os.path.exists(path):
     boundary = gpd.read_file(os.path.join(BASE_DIR, la_to_view, "boundary.gpkg"))
     gdf = gpd.read_file(path)
     m = leafmap.Map(center=(51.5074, 0.1278), zoom=10)
-    m.add_basemap(basemap="CartoDB.Positron")
     m.add_basemap("OpenStreetMap")
     m.add_gdf(boundary, layer_name="boundary", fill_color="red", info_mode="on_click")
     m.add_gdf(gdf, layer_name=demand_to_read, zoom_to_layer=True, info_mode="on_click")
@@ -126,7 +123,3 @@ if submit_button:
         st.success('Thank you for your feedback!')
     else:
         st.error('Please fill in all fields.')
-
-# if os.path.exists('feedback.csv'):
-#     st.subheader('Feedback Received')
-
