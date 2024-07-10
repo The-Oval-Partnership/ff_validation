@@ -10,40 +10,50 @@ BASE_DIR = os.curdir
 st.title("Footflow Input Validation \n")
 st.divider()
 
-st.markdown("- Bus demand - We are using frequency metrics as a proxy for relative demand at bus stops.\
-            The frequency of buses at each bus stop is aggregated to weekly, daily, and hourly level.\
-            This data looks robust in urban area but please tell us if you see accuracy issues in more\
-            rural areas. \n  ")
-
-st.markdown("- Education demand - This dataset represents the number of pupils at pre-school, primary and secondary schools.\
-            Some of the data is derived directly from Ofsted records, and the estimate for the remaining schools is derived from\
-            their estimated gross floor area. Potential issues that we are currently working to understand the impact of include\
-            (a) schools with more than one site in close proximity and (b) schools located in mixed used buildings.\
-            Please tell us if you see relevant examples.This data does not include further education, which generates\
-            footfall at different times of the day and is thus grouped with other employment categories in our data. \n")
-
-st.markdown("- Rail demand - This is based on published annual station entry/exit data. To reduce the effect of volatile year-on-year results,\
-            we have applied a 5-year rolling average method with more weight assigned to the most recent years (and pandemic years excluded).\
-            We would appreciate your feedback on whether the resulting metric provides a reasonable estimate of relative rail demand.\
-            These figures are for national rail stations. Please note that we haven't finalised the combined rail and Underground datasets for London yet.\n")
-
-st.markdown("- Residential Population - Granular estimates of the distribution of residential population are a key input to Footflow\
-            This dataset represents our estimate of the sum of the population in each building (buildings from OS Localmap).\
-            For ease of interpretation we have visualised the data normalised by the ground floor area of the buildings so \
-            that higher density housing appears darker in the colour scale. The data is factored to 2022 mid year population estimates\
-            but uses 2024 address listings. If you know of areas of recent housing completions (or clearance) in your authority area,\
-            please sense-check the estimates in these areas. The method may result in some cases in small numbers of residents being\
-            allocated to non-residential buildings. Please tell us if you see examples that appear to be mis-allocating large numbers of residents.\
-            We are also aware of issues with different classifications for multi-occupancy buildings such as student residences.\
-            Please flag any examples that look incorrect.\n")
-
+st.markdown(
+    """
+    - **Bus demand**
+        - We are using frequency metrics as a proxy for relative demand at bus stops. The frequency of buses at each bus stop is aggregated to weekly, daily, and hourly level.
+        - This data looks robust in urban areas but please tell us if you see accuracy issues in more rural areas.
+    """
+)
+st.markdown(
+    """
+    - **Education demand**
+        - This dataset represents the number of pupils at pre-school, primary, and secondary schools.
+        - Some of the data is derived directly from Ofsted records, and the estimate for the remaining schools is derived from their estimated gross floor area.
+        - Potential issues that we are currently working to understand the impact of include:
+            - (a) schools with more than one site in close proximity
+            - (b) schools located in mixed-use buildings.
+        - Please tell us if you see relevant examples. This data does not include further education, which generates footfall at different times of the day and is thus grouped with other employment categories in our data.
+    """
+)
+st.markdown(
+    """
+    - **Rail demand**
+        - This is based on published annual station entry/exit data. To reduce the effect of volatile year-on-year results, we have applied a 5-year rolling average method with more weight assigned to the most recent years (and pandemic years excluded).
+        - We would appreciate your feedback on whether the resulting metric provides a reasonable estimate of relative rail demand.
+    """
+)
+st.markdown(
+    """
+    - **Residential demand**
+        - This dataset represents our estimate of the sum of the population in each building (buildings from OS Localmap).
+        - For ease of interpretation we have visualised the data normalised by the ground floor area of the buildings so that higher density housing appears darker in the colour scale.
+        - The data is factored to 2022 mid year population estimates but uses 2024 address listings.
+        - If you know of areas of recent housing completions (or clearance) in your authority area, please sense-check the estimates in these areas.
+        - The method may result in some cases in small numbers of residents being allocated to non-residential buildings. Please tell us if you see examples that appear to be mis-allocating large numbers of residents.
+        - We are also aware of issues with different classifications for multi-occupancy buildings such as student residences. Please flag any examples that look incorrect.
+        - Due to the data size of this demand, it may take about 45 seconds to load.
+    """
+)
 st.divider()
-
 
 local_authorites = [
     "Barking and Dagenham",
     "Bolton",
-    "Buckinghamshire",
+    "Buckinghamshire (North & Central)",
+    "Buckinghamshire (South, East & West)",
     "Charnwood",
     "Cheshire West and Chester",
     "City of London",
