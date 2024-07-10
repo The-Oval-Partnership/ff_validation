@@ -7,7 +7,7 @@ import geopandas as gpd
 import leafmap.foliumap as leafmap
 
 BASE_DIR = os.curdir
-st.title("Footflow Input Validation \n")
+st.title("Footflow Input Data Validation \n")
 st.divider()
 
 st.markdown(
@@ -52,8 +52,8 @@ st.divider()
 local_authorites = [
     "Barking and Dagenham",
     "Bolton",
-    "Buckinghamshire (North & Central)",
-    "Buckinghamshire (South, East & West)",
+    "Buckinghamshire(North & Central)",
+    "Buckinghamshire(South, East & West)",
     "Charnwood",
     "Cheshire West and Chester",
     "City of London",
